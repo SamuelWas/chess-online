@@ -1,0 +1,22 @@
+<%- include('partials/head') %>
+    <div class="container">
+        <a class="logout-btn" href="/logout">Logout</a>
+        <h1>Welcome, <%= user.username %>!</h1>
+        <p>Ready to play chess?</p>
+        <a class="btn" href="/room">Create a Room</a>
+        <a class="btn" href="/room">Join a Room</a>
+        <!-- Additional features can be added here -->
+    </div>
+
+    <script>
+        function createRoom() {
+            // Add logic to create a new chess room
+            alert('Creating a new room...');
+        }
+
+        function joinRoom() {
+            // Add logic to join an existing chess room
+            alert('Joining a room...');
+        }
+    </script>
+    <%- include('partials/foot') %>

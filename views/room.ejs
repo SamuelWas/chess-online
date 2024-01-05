@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Room</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        #chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-gap: 2px;
+            max-width: 400px;
+        }
+
+        .square {
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+            background-color: #eee;
+        }
+
+        .square:nth-child(even) {
+            background-color: #ddd;
+        }
+
+        .piece {
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .piece img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chessboard">
+    <!-- Chessboard squares generated dynamically with JavaScript -->
+</div>
+
+<script>
+    // You can use JavaScript to generate the chessboard and handle game logic.
+    const chessboard = document.getElementById('chessboard');
+
+    // Create the chessboard squares dynamically
+    for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            chessboard.appendChild(square);
+        }
+    }
+
+    // Add chess pieces dynamically (for example, using font-based chess pieces)
+    const pieces = ['♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜'];
+    for (let col = 0; col < 8; col++) {
+        const piece = document.createElement('div');
+        piece.classList.add('piece');
+        piece.innerHTML = `<span>${pieces[col]}</span>`;
+        chessboard.children[col].appendChild(piece);
+    }
+
+    // Add pawns
+    for (let col = 0; col < 8; col++) {
+        const pawn = document.createElement('div');
+        pawn.classList.add('piece');
+        pawn.innerHTML = `<span>♟</span>`;
+        chessboard.children[1 * 8 + col].appendChild(pawn);
+    }
+    for (let col = 0; col < 8; col++) {
+        const pawn = document.createElement('div');
+        pawn.classList.add('piece');
+        pawn.innerHTML = `<span>♙</span>`;
+        chessboard.children[6 * 8 + col].appendChild(pawn);
+    }
+</script>
+
+</body>
+</html>

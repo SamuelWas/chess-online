@@ -1,0 +1,14 @@
+<div class="login-container">
+    <h1>♟️ Chess Clone ♟️</h1>
+    <h2>Create your chess account</h2>
+    <form action="/register" method="post">
+        <%- message %>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="passwordConfirmation" placeholder="Confirm Password" required>
+        <!-- Additional registration fields can be added here -->
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="/login">Login</a></p>
+</div>

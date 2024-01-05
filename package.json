@@ -1,0 +1,31 @@
+{
+  "name": "chessclone",
+  "version": "1.0.0",
+  "description": "Inspired by: [project-ideas](https://github.com/hkirat/project-ideas)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelWas/chessClone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelWas/chessClone/issues"
+  },
+  "homepage": "https://github.com/SamuelWas/chessClone#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^8.0.3",
+    "mongosh": "^2.1.1",
+    "pbkdf2-password": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
