@@ -27,26 +27,100 @@
 			integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+		<script src="/javascripts/script.js" type="module"></script>
+		<style>
+			.leave-btn {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+
+			.copy-container-parent {
+				display: flex;
+				justify-content: center;
+			}
+			.copy-container {
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 auto;
+				background-color: lightgray;
+				border-radius: 25px;
+			}
+
+			.copy-container:hover {
+				background-color: gray;
+			}
+
+			.btn {
+				margin: 10px;
+			}
+
+			.copy-container img {
+				width: 16px;
+				height: 16px;
+				padding: 0;
+				margin: 0;
+				vertical-align: middle;
+			}
+
+			.copy-link {
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: #3498db;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
+
+			.copy-link:hover {
+				background-color: #2980b9;
+			}
+
+			#roomLink {
+				font-size: 20px;
+				margin: 10px;
+			}
+
+			#status {
+				text-align: center;
+			}
+
+			.players {
+				font-size: 18px;
+				text-align: center;
+			}
+		</style>
 	</head>
-	<style>
-		.leave-btn {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-		}
-	</style>
+
 	<body>
 		<a class="leave-btn" href="/home">Leave</a>
 
+		<div class="copy-container-parent">
+			<button class="copy-container" data-clipboard-target="#roomLink">
+				<p id="roomLink"></p>
+
+				<!-- Trigger -->
+				<!-- <button class="btn"> -->
+				<img src="../images/copy-icon.png" alt="Copy to clipboard" />
+				<!-- </button> -->
+			</button>
+		</div>
+
 		<h2 id="status" style="font-size: 40px"></h2>
 		<div id="board" style="width: 600px; margin: 5vh auto"></div>
-		<p id="whitePlayer"></p>
-		<p id="blackPlayer"></p>
+		<div class="players">
+			<p id="whitePlayer"></p>
+			<p id="blackPlayer"></p>
+		</div>
 
 		<!-- <label>FEN:</label>
 		<div id="fen"></div>
 		<label>PGN:</label>
 		<div id="pgn"></div> -->
-		<script src="/javascripts/script.js"></script>
 	</body>
 </html>

@@ -94,6 +94,13 @@ io.on("connection", socket => {
 			whitePlayer: room.whitePlayer,
 			blackPlayer: room.blackPlayer,
 			orientation: room.whitePlayer === username ? "w" : "b",
+			player: username,
+		});
+
+		io.to(roomId).emit("gameStatus", {
+			fen: room.fen,
+			whitePlayer: room.whitePlayer,
+			blackPlayer: room.blackPlayer,
 		});
 	});
 

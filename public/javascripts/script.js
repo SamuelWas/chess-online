@@ -1,5 +1,4 @@
 // import { Chess } from "chess.js";
-
 let chess = new Chess();
 let board = null;
 let $status = $("#status");
@@ -17,14 +16,24 @@ socket.on("connect", () => {
 	socket.emit("join", roomId, handleFailedJoin);
 
 	socket.on("gameStatus", gameStatus => {
-		console.log(
-			`received fen: ${gameStatus.fen} and whitePlayer: ${gameStatus.whitePlayer} and blackPlayer: ${gameStatus.blackPlayer} and orientation: ${gameStatus.orientation}`
-		);
+		console.log(`received ${JSON.stringify(gameStatus)}`);
 		chess.load(gameStatus.fen);
 
 		chessOrientation = gameStatus.orientation || chessOrientation;
 		updateStatus(gameStatus);
 	});
+});
+
+const clipboard = new ClipboardJS(".copy-container");
+
+document.getElementById("roomLink").innerText = window.location.href;
+
+clipboard.on("success", e => {
+	document.getElementById("roomLink").innerText = "Copied to clipboard!";
+
+	setTimeout(() => {
+		document.getElementById("roomLink").innerText = window.location.href;
+	}, 1500);
 });
 
 function handleFailedJoin(err) {
@@ -97,8 +106,17 @@ function updateStatus(gameStatus) {
 	}
 
 	$status.html(status);
-	if (gameStatus && gameStatus.whitePlayer) $whitePlayer.html("White: " + gameStatus.whitePlayer);
-	if (gameStatus && gameStatus.blackPlayer) $blackPlayer.html("Black: " + gameStatus.blackPlayer);
+
+	if (gameStatus) {
+		if (gameStatus.whitePlayer) $whitePlayer.html("White: " + gameStatus.whitePlayer);
+		if (gameStatus.blackPlayer) $blackPlayer.html("Black: " + gameStatus.blackPlayer);
+
+		if (gameStatus.player && gameStatus.player === gameStatus.whitePlayer) {
+			$whitePlayer.css("font-weight", "bold");
+		} else if (gameStatus.player && gameStatus.player === gameStatus.blackPlayer) {
+			$blackPlayer.css("font-weight", "bold");
+		}
+	}
 	$fen.html(chess.fen());
 	$pgn.html(chess.pgn());
 	var config = {
