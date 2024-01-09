@@ -1,4 +1,4 @@
-# Chess Game Clone for Full Stack Learning
+# Chess Online for Full Stack Learning
 Inspired by: [project-ideas](https://github.com/hkirat/project-ideas)
 
 ## Project Description
