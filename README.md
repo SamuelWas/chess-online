@@ -18,6 +18,9 @@ Inspired by: [project-ideas](https://github.com/hkirat/project-ideas)
     npm install
     npm start
 ```
+You need to have MongoDB running on:
+
+    mongodb://127.0.0.1:27017
 
 ## Features
 - A user can create an account and login
