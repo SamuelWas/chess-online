@@ -19,6 +19,12 @@ Inspired by: [project-ideas](https://github.com/hkirat/project-ideas)
     npm start
 ```
 
+## Features
+- A user can create an account and login
+- A user can create a room and invite other people
+- A user can join someon else's room
+- A user can play chess once in a room
+
 The server will be running on [localhost:3000](http://localhost:3000)
 
 ## External resources
