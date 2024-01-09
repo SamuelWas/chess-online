@@ -25,7 +25,13 @@ The server will be running on [localhost:3000](http://localhost:3000)
 
 | Tool | Purpose |
 | -------- | ------- |
-| [Socket.io](https://socket.io) | for managing chess rooms (creation, joining) and for communicating moves and game data |
-| [Express.js](https://expressjs.com/pt-br/) |  easier server config and endpoint routing |
-| [chess.js](https://expressjs.com/pt-br/) | for chess logic and verifications|
-| [chessboard.js](https://chessboardjs.com) | for chessboard representation in the frontend |
+| [Socket.io](https://socket.io) | managing chess rooms (creation, joining) and for communicating moves and game data |
+| [Express.js](https://expressjs.com/pt-br/) | easier server config and endpoint routing |
+| [chess.js](https://expressjs.com/pt-br/) | chess logic and verifications|
+| [chessboard.js](https://chessboardjs.com) | chessboard representation in the frontend |
+| [clipboard.js](https://clipboardjs.com)| copying text to clipboard|
+| [Node.js](https://nodejs.org/en)| server JavaScripts |
+| [MongoDB](https://www.mongodb.com/pt-br)| storing users and rooms data |
+| [Mongoose](https://mongoosejs.com)| interacting with mongoDB using Nodejs |
+| [EJS](https://ejs.co)| views templating using javascript |
+
